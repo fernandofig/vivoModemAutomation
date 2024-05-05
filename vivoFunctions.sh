@@ -43,5 +43,7 @@ getIpV6PD() {
 }
 
 reboot() {
+	[ "$1" != "-s" ] && echo -n "* Sending Reboot command to ONT... "
 	curl -s -b $COOKIES_FILE $ONT_HOST$REBOOT_CALL
+	[ "$1" != "-s" ] && echo "Ok! "
 }
