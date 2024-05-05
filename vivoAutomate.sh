@@ -12,7 +12,7 @@ case $1 in
     getIpV6PD
     ;;
 "reboot")
-    reboot
+    reboot $2
     ;;
 *)
     echo "Usage: $0 <login | getipv6-pd | reboot> [-d | -v]"
