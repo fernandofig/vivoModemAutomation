@@ -26,7 +26,7 @@ if [ -n "$IPVS" ] && [ "$IPVS" != "::/64" ] && [ "$IPVS" != "/64"  ] && [ -n $IP
 	/etc/init.d/odhcpd start
 	/etc/init.d/dnsmasq start
 
-	echo "$DATAATUAL : Atualizado!"
+	echo "$DATAATUAL : Uodated!"
 
 	/root/bin/consertaReflections.sh -s > /tmp/log/consertaReflections.log
 fi
