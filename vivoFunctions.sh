@@ -44,7 +44,8 @@ getIpV6PD() {
 
 reboot() {
 	[ "$1" != "-s" ] && echo -n "* Sending Reboot command to ONT... "
-	REBOOTOUT=$(curl -s -b $COOKIES_FILE $ONT_HOST$REBOOT_CALL)
+	REBOOT_POSTDATA="restoreFlag=1&RestartBtn=RESTART"
+	REBOOTOUT=$(curl -s -b $COOKIES_FILE --data "$REBOOT_POSTDATA" $ONT_HOST$REBOOT_CALL)
 	[ "$1" = "-d" ] && echo && echo "$REBOOTOUT"
-	[ "$1" != "-s" ] && echo "Ok! "
+	[ "$1" != "-s" ] && echo "Ok!"
 }
